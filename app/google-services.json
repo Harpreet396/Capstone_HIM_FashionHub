@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "298841800273",
+    "firebase_url": "https://the-inder-app-7de0c.firebaseio.com",
+    "project_id": "the-inder-app-7de0c",
+    "storage_bucket": "the-inder-app-7de0c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:298841800273:android:89a9934ec083db045a0270",
+        "android_client_info": {
+          "package_name": "com.inderproduction.theinderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "298841800273-r5tcn7s1dvphv2lvkne1s8qk4t394lgs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.inderproduction.theinderapp",
+            "certificate_hash": "cfbecc665d246a6480972ab5ee7d177fa1c30c62"
+          }
+        },
+        {
+          "client_id": "298841800273-21p5uf8qgmvc124s9qota36hna05b9n7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh--7dAjJSTsrqJPzII19NJl2Q41tTgz8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "298841800273-21p5uf8qgmvc124s9qota36hna05b9n7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

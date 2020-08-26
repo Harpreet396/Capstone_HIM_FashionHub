@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Capstone_HIM_FashionHub</string>
+    <string name="title_activity_shopping">ShoppingActivity</string>
+    <string name="tab_text_1">Pants</string>
+    <string name="tab_text_2">Shirts</string>
+    <string name="tab_text_3">Footwears</string>
+</resources>

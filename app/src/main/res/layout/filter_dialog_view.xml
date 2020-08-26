@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="10dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:text="Price Range" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/filter_minprice"
+            android:inputType="number"
+            android:maxLength="5"
+            android:layout_width="0dp"
+            android:hint="Min"
+            android:layout_height="wrap_content"
+            android:layout_weight="40" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:gravity="center"
+            android:text="to" />
+
+        <EditText
+            android:id="@+id/filter_maxprice"
+            android:maxLength="5"
+            android:inputType="number"
+            android:layout_width="0dp"
+            android:hint="Max"
+            android:layout_height="wrap_content"
+            android:layout_weight="40" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="17sp"
+        android:text="Suitable For" />
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/filter_male"
+            android:layout_width="0dp"
+            android:hint="Male"
+            android:checked="true"
+            android:layout_height="wrap_content"
+            android:layout_weight="20" />
+
+
+        <CheckBox
+            android:id="@+id/filter_female"
+            android:layout_width="0dp"
+            android:hint="Female"
+            android:checked="true"
+            android:layout_height="wrap_content"
+            android:layout_weight="20" />
+
+    </LinearLayout>
+
+</LinearLayout>
