@@ -2,12 +2,14 @@ package com.inderproduction.theinderapp.ui.main;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,13 +24,25 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.inderproduction.theinderapp.Adapters.ShoesListAdapter;
+import com.inderproduction.theinderapp.Modals.Pent;
 import com.inderproduction.theinderapp.Modals.Shoes;
 import com.inderproduction.theinderapp.OneApplication;
+import com.inderproduction.theinderapp.ProductDetail;
 import com.inderproduction.theinderapp.R;
+import com.inderproduction.theinderapp.Utilities.CustomUtils;
+import com.inderproduction.theinderapp.Utilities.DisplayUtils;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 
 public class ShoesFragment extends Fragment  implements ShoesListAdapter.OnShoesItemClickListener, OnFilterAppliedListener {
@@ -120,7 +134,12 @@ public class ShoesFragment extends Fragment  implements ShoesListAdapter.OnShoes
     }
     @Override
     public void onItemClick(int position) {
+        Shoes data = (Shoes) completeData.get(position);
 
+        Intent toDetails = new Intent(activityContext, ProductDetail.class);
+        toDetails.putExtra("itemID", data.getItemID());
+        toDetails.putExtra("itemCategory", data.getItemCategory());
+        startActivity(toDetails);
     }
 
     @Override

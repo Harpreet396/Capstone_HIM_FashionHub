@@ -1,8 +1,5 @@
 package com.inderproduction.theinderapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -14,6 +11,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -22,7 +22,7 @@ import com.inderproduction.theinderapp.Utilities.DisplayUtils;
 import com.inderproduction.theinderapp.Utilities.Validations;
 
 public class Signup extends AppCompatActivity {
-    private EditText signupEmail,password,confirmPassword;
+    private EditText signupEmail, password, confirmPassword;
     private Button signupButton;
     private TextView alreadyUser;
     private ProgressBar signUpProgress;
@@ -35,11 +35,11 @@ public class Signup extends AppCompatActivity {
 
         setContentView(R.layout.activity_signup);
 
-        signupEmail=findViewById(R.id.signup_email);
-        password=findViewById(R.id.signup_password);
-        confirmPassword=findViewById(R.id.confirm_password);
-        alreadyUser=findViewById(R.id.signup_already_user);
-        signupButton=findViewById(R.id.signup_button);
+        signupEmail = findViewById(R.id.signup_email);
+        password = findViewById(R.id.signup_password);
+        confirmPassword = findViewById(R.id.confirm_password);
+        alreadyUser = findViewById(R.id.signup_already_user);
+        signupButton = findViewById(R.id.signup_button);
         signUpProgress = findViewById(R.id.signup_progress);
 
         DisplayUtils.disableFields(signupButton);
@@ -66,13 +66,13 @@ public class Signup extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!confirmPassword.getText().toString().trim().equals("")){
+                if (!confirmPassword.getText().toString().trim().equals("")) {
                     DisplayUtils.disableFields(password);
                 }
 
-                if(password.getText().toString().equals(confirmPassword.getText().toString())){
-                   DisplayUtils.enableFields(signupButton);
-                }else{
+                if (password.getText().toString().equals(confirmPassword.getText().toString())) {
+                    DisplayUtils.enableFields(signupButton);
+                } else {
                     DisplayUtils.disableFields(signupButton);
                 }
             }
@@ -94,7 +94,9 @@ public class Signup extends AppCompatActivity {
 
                                     signUpProgress.setVisibility(View.INVISIBLE);
                                     if (task.isSuccessful()) {
-                                            if (firebaseAuth.getCurrentUser() != null) { Intent toMain = new Intent(Signup.this,ShoppingActivity.class);
+                                        if (firebaseAuth.getCurrentUser() != null) {
+
+                                            Intent toMain = new Intent(Signup.this, ShoppingActivity.class);
                                             startActivity(toMain);
                                             finish();
                                         }
@@ -106,5 +108,16 @@ public class Signup extends AppCompatActivity {
                 }
             }
         });
+
+        alreadyUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent skipLoginIntent = new Intent(Signup.this, LoginActivity.class);
+                startActivity(skipLoginIntent);
+                finish();
+            }
+        });
+
     }
 }

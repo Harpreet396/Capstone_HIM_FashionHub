@@ -59,7 +59,7 @@ public class ShoppingActivity extends AppCompatActivity implements CompoundButto
 
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("The Inder App");
+            getSupportActionBar().setTitle("Fashion Hub");
         }
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
@@ -118,7 +118,17 @@ public class ShoppingActivity extends AppCompatActivity implements CompoundButto
 
 
 
-//
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (OneApplication.cart.size() > 0) {
+                    Intent cartIntent = new Intent(ShoppingActivity.this, CartActivity.class);
+                    startActivity(cartIntent);
+                } else {
+                    DisplayUtils.showToast(ShoppingActivity.this, "No Items in Cart", Toast.LENGTH_SHORT);
+                }
+            }
+        });
 
         FloatingActionButton fabFilter = findViewById(R.id.fab_filter);
         fabFilter.setOnClickListener(new View.OnClickListener() {
@@ -153,8 +163,24 @@ public class ShoppingActivity extends AppCompatActivity implements CompoundButto
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
+        if (item.getItemId() == R.id.profile_menu && CustomUtils.isInternetConnected(this)) {
 
+            FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+            if (firebaseAuth.getCurrentUser() != null) {
+                Intent toProfile = new Intent(ShoppingActivity.this, UserProfileActivity.class);
+                startActivity(toProfile);
+            } else {
+                Intent toLogin = new Intent(ShoppingActivity.this, LoginActivity.class);
+                toLogin.putExtra("sender", "shopping");
+                startActivity(toLogin);
+            }
+        }
 
+        if(item.getItemId()==R.id.item_search &&CustomUtils.isInternetConnected(this)){
+            Intent searchIntent = new Intent(ShoppingActivity.this, SearchActivity.class);
+            startActivity(searchIntent);
+
+        }
 
             return super.onOptionsItemSelected(item);
     }

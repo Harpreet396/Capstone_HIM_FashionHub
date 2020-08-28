@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,6 +14,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.inderproduction.theinderapp.Modals.Pent;
+import com.inderproduction.theinderapp.Modals.Shirt;
 import com.inderproduction.theinderapp.Modals.Shoes;
 import com.inderproduction.theinderapp.R;
 import com.squareup.picasso.Picasso;
@@ -59,7 +62,7 @@ public class ShoesListAdapter extends RecyclerView.Adapter<ShoesListAdapter.Shoe
             Picasso.get().load(Uri.parse(s.getProductImage())).fit().into(holder.shoeImage);
 
             holder.shoeName.setText(s.getItemName());
-            holder.shoeRsTag.setText("Rs.");
+            holder.shoeRsTag.setText("CAN ");
             holder.shoePrice.setText(String.valueOf(s.getItemPrice()));
 
             int dis=s.getDiscount();

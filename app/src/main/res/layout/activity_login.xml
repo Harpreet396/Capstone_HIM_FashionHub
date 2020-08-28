@@ -106,6 +106,22 @@
                     android:padding="10dp"
                     android:text="Login"
                     android:textColor="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:gravity="center"
+                    android:text="----------------Or----------------"
+                    android:textColor="#686868"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"/>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_gravity="center"
@@ -132,6 +148,21 @@
                         android:textStyle="bold"
                         android:visibility="visible" />
                 </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:gravity="center"
+                    android:text="----------------Or----------------"
+                    android:textColor="#686868"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"/>
 
                 <TextView
                     android:id="@+id/login_skip"

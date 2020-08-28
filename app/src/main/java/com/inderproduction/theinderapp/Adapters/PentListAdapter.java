@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.inderproduction.theinderapp.Modals.Pent;
 import com.inderproduction.theinderapp.R;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,7 +59,7 @@ public class PentListAdapter extends RecyclerView.Adapter<PentListAdapter.PentVi
             Picasso.get().load(Uri.parse(j.getProductImage())).fit().into(holder.pentImage);
 
             holder.pentName.setText(j.getItemName());
-            holder.pentRsTag.setText("Rs.");
+            holder.pentRsTag.setText("CAN ");
             holder.pentPrice.setText(String.valueOf(j.getItemPrice()));
 
             int dis=j.getDiscount();
@@ -118,7 +118,7 @@ public class PentListAdapter extends RecyclerView.Adapter<PentListAdapter.PentVi
     }
 
     public interface OnPentItemClickListener {
-        void onItemAddToCart(int position, String category);
+        void onItemAddToCart(int position,String category);
         void onItemClick(int position);
     }
 }

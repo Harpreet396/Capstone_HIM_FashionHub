@@ -60,7 +60,7 @@ public class ShirtListAdapter extends RecyclerView.Adapter<ShirtListAdapter.Shir
                 Picasso.get().load(Uri.parse(s.getProductImage())).fit().into(holder.shirtImage);
             }
             holder.shirtName.setText(s.getItemName());
-            holder.shirtRsTag.setText("Rs.");
+            holder.shirtRsTag.setText("CAN ");
             holder.shirtPrice.setText(String.valueOf(s.getItemPrice()));
 
             int dis = s.getDiscount();

@@ -12,10 +12,10 @@
         tools:context=".UserProfileActivity">
 
         <ImageView
-            android:background="@drawable/edittext_input"
             android:id="@+id/profile_image"
             android:layout_width="100dp"
-            android:layout_height="100dp" />
+            android:layout_height="100dp"
+            android:background="@drawable/edittext_input" />
 
         <EditText
             android:id="@+id/profile_fname"
@@ -73,13 +73,50 @@
             android:text="Log Out"
             android:textColor="@color/colorBlack" />
 
+        <RelativeLayout
+            android:id="@+id/ll_paypal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/darker_gray"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:src="@drawable/paypal" />
+
+            <TextView
+                android:id="@+id/tv_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="@string/paypal"
+                android:textColor="@color/colorBlack"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+
 
     </LinearLayout>
 
     <ProgressBar
-        android:layout_gravity="center"
         android:id="@+id/profile_progress_bar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
 </FrameLayout>

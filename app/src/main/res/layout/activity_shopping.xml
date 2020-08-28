@@ -91,9 +91,10 @@
             android:layout_gravity="right|top"
             android:background="@drawable/ic_circle_background"
             android:gravity="center"
-            android:padding="5dp"
-            android:textColor="@color/colorWhite"
+            android:padding="2dp"
+            android:textColor="@color/colorAccent"
             android:textSize="@dimen/text_brand_name"
+            android:textStyle="bold"
             android:translationZ="5dp" />
 
     </FrameLayout>

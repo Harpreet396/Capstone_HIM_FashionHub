@@ -1,5 +1,7 @@
 package com.inderproduction.theinderapp.ui.main;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +30,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.inderproduction.theinderapp.Adapters.PentListAdapter;
 import com.inderproduction.theinderapp.Modals.Pent;
 import com.inderproduction.theinderapp.OneApplication;
+import com.inderproduction.theinderapp.ProductDetail;
 import com.inderproduction.theinderapp.R;
 
 import java.util.ArrayList;
@@ -164,7 +169,10 @@ public class PentFragment extends Fragment implements PentListAdapter.OnPentItem
     public void onItemClick(int position) {
         Pent data = (Pent) completeData.get(position);
 
-//
+        Intent toDetails = new Intent(activityContext, ProductDetail.class);
+        toDetails.putExtra("itemID", data.getItemID());
+        toDetails.putExtra("itemCategory", data.getItemCategory());
+        startActivity(toDetails);
     }
 
     @Override
