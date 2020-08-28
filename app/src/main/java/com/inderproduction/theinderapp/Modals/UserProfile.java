@@ -7,9 +7,7 @@ public class UserProfile {
     private String userAddress;
     private boolean encrypted;
 
-    UserProfile(){
-
-    }
+    UserProfile(){ }
 
     public String getUserFullName() {
         return userFullName;
