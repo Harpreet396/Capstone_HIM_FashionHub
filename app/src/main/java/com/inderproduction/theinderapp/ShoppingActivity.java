@@ -76,7 +76,6 @@ public class ShoppingActivity extends AppCompatActivity implements CompoundButto
             public void onPageSelected(int position) {
                 currentTab = position;
 
-
             }
 
             @Override
@@ -89,8 +88,6 @@ public class ShoppingActivity extends AppCompatActivity implements CompoundButto
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
-
-
 
 
         tabContainer.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -111,11 +108,6 @@ public class ShoppingActivity extends AppCompatActivity implements CompoundButto
                 tabContainer.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
-
-
-
-
-
 
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -206,14 +198,10 @@ public class ShoppingActivity extends AppCompatActivity implements CompoundButto
 
         minPriceET.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
 
             @Override
             public void afterTextChanged(Editable editable) {
@@ -236,19 +224,12 @@ public class ShoppingActivity extends AppCompatActivity implements CompoundButto
 
             @Override
             public void afterTextChanged(Editable editable) {
-
                     setMaxFilterField(maxPriceET,minPriceET);
-
             }
         });
 
-
-
-
         maleCB.setOnCheckedChangeListener(this);
         femaleCB.setOnCheckedChangeListener(this);
-
-
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this).setView(v)
                 .setPositiveButton("Apply", new DialogInterface.OnClickListener() {
@@ -316,7 +297,6 @@ public class ShoppingActivity extends AppCompatActivity implements CompoundButto
             filter.setFemaleFilter(b);
         }
     }
-
 
     @Override
     public void onScrollUp() {
