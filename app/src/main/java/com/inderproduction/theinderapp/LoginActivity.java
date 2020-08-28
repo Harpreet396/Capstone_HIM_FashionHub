@@ -208,8 +208,6 @@ public class LoginActivity extends AppCompatActivity {
                                         Toast.LENGTH_SHORT).show();
                             }
 
-
-                            // ...
                         }
                     });
         } catch (Exception ex) {
