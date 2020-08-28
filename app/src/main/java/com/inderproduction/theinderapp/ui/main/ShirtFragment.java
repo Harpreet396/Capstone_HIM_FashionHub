@@ -101,7 +101,7 @@ public class ShirtFragment extends Fragment  implements ShirtListAdapter.OnShirt
                         Shirt p = snap.toObject(Shirt.class);
                         completeData.add(p);
                     }
-                    Log.e("COMPLETE DATA SIZEZ", completeData.size() + "");
+//                    Log.e("COMPLETE DATA SIZEZ", completeData.size() + "");
                     updateListData(completeData);
                 }
                 progressBar.setVisibility(View.INVISIBLE);
