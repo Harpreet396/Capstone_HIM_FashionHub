@@ -99,7 +99,6 @@ public class PentFragment extends Fragment implements PentListAdapter.OnPentItem
                         Pent p = snap.toObject(Pent.class);
                         completeData.add(p);
                     }
-                    Log.e("COMPLETE DATA SIZEZ", completeData.size() + "");
                     updateListData(completeData);
                 }
                 progressBar.setVisibility(View.INVISIBLE);
@@ -121,7 +120,7 @@ public class PentFragment extends Fragment implements PentListAdapter.OnPentItem
         productList.setOnFlingListener(new RecyclerView.OnFlingListener() {
             @Override
             public boolean onFling(int velocityX, int velocityY) {
-                Log.e("height is ",""+mainListHeight);
+//                Log.e("height is ",""+mainListHeight);
                 if(velocityY < 0 ){
                     productList.setLayoutParams(new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,mainListHeight));
                     mRecyclerScrolled.onScrollUp();
@@ -135,10 +134,6 @@ public class PentFragment extends Fragment implements PentListAdapter.OnPentItem
             }
         });
     }
-
-//        asyncLoading = new LoadDataAsync();
-//        asyncLoading.execute(type); }
-
 
     private void updateListData(List<Object> newData) {
         if (newData.size() > 0) {
